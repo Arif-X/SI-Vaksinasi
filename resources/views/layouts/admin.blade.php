@@ -53,27 +53,27 @@
                         <span class="nav__name">Dashboard</span>
                     </a> 
 
-                    <a href="{{ route('admin.jenis-vaksin.index') }}" class="nav__link" id="kader">
+                    <a href="{{ route('admin.jenis-vaksin.index') }}" class="nav__link">
                         <i class='bx bxs-droplet-half nav__icon' ></i>
                         <span class="nav__name">Data Vaksin</span>
                     </a>
 
-                    <a href="{{ route('admin.tempat-vaksin.index') }}" class="nav__link" id="kader">
+                    <a href="{{ route('admin.tempat-vaksin.index') }}" class="nav__link">
                         <i class='bx bx-map-pin nav__icon' ></i>
                         <span class="nav__name">Data Tempat Vaksin</span>
                     </a>
 
-                    <a href="{{ route('admin.pevaksin.index') }}" class="nav__link" id="kader">
+                    <a href="{{ route('admin.pevaksin.index') }}" class="nav__link">
                         <i class='bx bx-user nav__icon' ></i>
                         <span class="nav__name">Data Pevaksin</span>
                     </a>
 
-                    <a href="{{ route('admin.vaksinasi-pertama.index') }}" class="nav__link" id="kader">
+                    <a href="{{ route('admin.vaksinasi-pertama.index') }}" class="nav__link">
                         <i class='bx bx-droplet nav__icon' ></i>
                         <span class="nav__name">Data Vaksinasi Pertama</span>
                     </a>
 
-                    <a href="{{ route('admin.vaksinasi-kedua.index') }}" class="nav__link" id="kader">
+                    <a href="{{ route('admin.vaksinasi-kedua.index') }}" class="nav__link">
                         <i class='bx bx-droplet nav__icon' ></i>
                         <span class="nav__name">Data Vaksinasi Kedua</span>
                     </a>

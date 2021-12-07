@@ -16,10 +16,10 @@ class PesertaMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth()->user()->role == 3){
+        if(auth()->user()->role <= 3){
             return $next($request);
         } else {
-            return view('home');
+            return redirect('/user/profil');
         } 
     }
 }

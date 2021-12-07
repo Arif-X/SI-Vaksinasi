@@ -16,10 +16,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth()->user()->role == 1){
+        if(auth()->check() && auth()->user()->role == 1){
             return $next($request);
         } else {
-            return view('home');
+            return redirect('/user/profil');
         }        
     }
 }

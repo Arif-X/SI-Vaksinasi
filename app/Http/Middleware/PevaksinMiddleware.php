@@ -16,8 +16,8 @@ class PevaksinMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->role < 2){
-            return response()->view('home');
+        if(auth()->user()->role < 2){
+            return redirect('/user/profil');
         } else {
             return $next($request);
         } 

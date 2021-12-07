@@ -53,10 +53,29 @@
                         <span class="nav__name">Dashboard</span>
                     </a> 
 
-                    <a href="{{ route('user.profil') }}" class="nav__link" id="kader">
+                    <a href="{{ route('user.profil') }}" class="nav__link">
                         <i class='bx bx-user nav__icon' ></i>
                         <span class="nav__name">Data Profil</span>
                     </a>
+
+                    <a href="{{ route('user.sertifikat.pertama') }}" class="nav__link">
+                        <i class='bx bx-droplet nav__icon' ></i>
+                        <span class="nav__name">Sertifikat Vaksinasi 1</span>
+                    </a>
+
+                    <a href="{{ route('user.sertifikat.kedua') }}" class="nav__link">
+                        <i class='bx bx-droplet nav__icon' ></i>
+                        <span class="nav__name">Sertifikat Vaksinasi 2</span>
+                    </a>
+
+                    <?php
+                    if(Auth::user()->role <= 2){
+                        echo '<a href="/pevaksin/vaksinasi-pertama" class="nav__link">
+                        <i class="bx bx-droplet nav__icon" ></i>
+                        <span class="nav__name">Vaksinasi</span>
+                        </a>';
+                    }
+                    ?>
                 </div>
             </div>
 
