@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\TempatVaksin;
 
 class HomeController extends Controller
 {
@@ -22,12 +23,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function home()
     {
         if(Auth::user()->role == 1){
             return redirect("/admin/jenis-vaksin");
         } elseif(Auth::user()->role >= 2) {
             return redirect("/user/profil");
         }
+    }
+
+    public function index(){
+        $koordinats = TempatVaksin::get();
+
+        return view('index', ['koordinats' => $koordinats]);
     }
 }
