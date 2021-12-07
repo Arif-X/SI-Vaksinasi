@@ -40,6 +40,7 @@ class VaksinasiPertamaController extends Controller
                 'pevaksin_profil.nama as nama_pevaksin'
             )
             ->where('vaksinasi.vaksinasi_ke', 1)
+            ->orderBy('id_vaksinasi', 'DESC')
             ->get();
             return Datatables::of($data)
             ->addIndexColumn()

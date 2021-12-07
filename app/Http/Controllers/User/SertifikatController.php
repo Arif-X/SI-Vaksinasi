@@ -17,7 +17,7 @@ class SertifikatController extends Controller
         ->first();
 
         if(empty($check)){
-            return back();
+            return redirect('/home');
         } else {
             $nama = Vaksinasi::join('users', 'users.id', '=', 'vaksinasi.id_user')
             ->join('profil', 'profil.id_user', '=', 'vaksinasi.id_user')
@@ -144,7 +144,7 @@ class SertifikatController extends Controller
         ->first();
 
         if(empty($check)){
-            return back();
+            return redirect('/user/profil')->with('error', 'Anda Belum Melakukan Vaksinasi Kedua');
         } else {
             $nama = Vaksinasi::join('users', 'users.id', '=', 'vaksinasi.id_user')
             ->join('profil', 'profil.id_user', '=', 'vaksinasi.id_user')

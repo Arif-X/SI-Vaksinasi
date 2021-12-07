@@ -161,7 +161,15 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<h5>Data Profil Vaksinasi Bisa Diupdate Di Sini</h5>
+					<h5>
+						Data Profil Vaksinasi Bisa Diupdate Di Sini<br><br>
+						Pastikan
+						<ul>
+							<li>Email belum terpakai oleh user lain</li>
+							<li>NIK tidak boleh sama</li>
+						</ul>
+						<strong>Jika tidak mencapai kriteria diatas, maka data tidak akan tersimpan</strong>
+					</h5>
 				</div>
 			</div>
 		</div>
@@ -242,6 +250,7 @@
 				},
 				error: function (data) {
 					console.log('Error:', data);
+					alert("Pastikan email belum terpakai oleh user lain & NIK tidak boleh sama");
 					$('#saveBtn').html('Simpan');
 				}
 			});

@@ -5,10 +5,16 @@
 <div class="mt-5">
 	<h1>Profil</h1>
 </div>
+@if ($message = Session::get('error'))
+<div class="alert alert-danger alert-block">
+	<button type="button" class="close" data-dismiss="alert">×</button>    
+	<strong>{{ $message }}</strong>
+</div>
+@endif
 <div class="card">
 	<div class="card-header text-white bg-primary">
 		Profil	
-	</div>
+	</div>	
 	<div class="card-body">
 		@foreach($datas as $data)
 		<form>

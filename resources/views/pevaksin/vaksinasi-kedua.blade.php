@@ -127,8 +127,18 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div class="modal-body">
-							<h5>Data Profil Vaksinasi Bisa Diupdate Di Halaman Vaksinasi Pertama</h5>
+						<div class="modal-body text-justify">
+							<h5>
+								Data Profil Vaksinasi Bisa Diupdate Di Halaman Vaksinasi Pertama<br><br>
+								<strong>Pastikan</strong>
+								<ul>
+									<li>Email belum terpakai oleh user lain</li>
+									<li>NIK tidak boleh sama</li>
+									<li>Vaksinasi kedua secepat-cepatnya harus lebih dari 30 hari</li>
+									<li>Jenis vaksin harus sama dengan jenis vaksin yang diberikan pada vaksinasi pertama</li>
+								</ul>
+								<strong>Jika tidak mencapai kriteria diatas, maka data tidak akan tersimpan</strong>
+							</h5>
 						</div>
 					</div>
 				</div>
@@ -193,6 +203,7 @@
 				},
 				error: function (data) {
 					console.log('Error:', data);
+					alert("Pastikan email belum terpakai oleh user lain, NIK tidak boleh sama, vaksinasi kedua secepat-cepatnya harus lebih dari 30 hari & jenis vaksin harus sama dengan jenis vaksin yang diberikan pada vaksinasi pertama");
 					$('#saveBtn').html('Simpan');
 				}
 			});

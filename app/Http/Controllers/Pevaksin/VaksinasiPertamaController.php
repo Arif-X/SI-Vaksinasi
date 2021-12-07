@@ -45,6 +45,7 @@ class VaksinasiPertamaController extends Controller
             )
             ->where('vaksinasi.vaksinasi_ke', 1)
             ->where('vaksinasi.id_pevaksin', $getIdPevaksin)
+            ->orderBy('id_vaksinasi', 'DESC')
             ->get();
             return Datatables::of($data)
             ->addIndexColumn()
@@ -90,7 +91,7 @@ class VaksinasiPertamaController extends Controller
         // Get ID Tempat Vaksin
         $tempatVaksin = TempatVaksin::where('alamat', $getAlamat)->where('nama_tempat', $getTempat)->value('id_tempat_vaksin');
 
-        $checkId = Vaksinasi::where('id_user', $request->id_user)->where('id_pevaksin', $getIdPevaksin)->where('vaksinasi_ke', 1)->first();
+        $checkId = Vaksinasi::where('id_user', $request->id_user)->where('vaksinasi_ke', 1)->first();
         
         if(empty($checkId)){
             $user = User::create([

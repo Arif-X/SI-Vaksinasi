@@ -7,19 +7,25 @@ use App\TempatVaksin;
 use App\Pevaksin;
 use App\User;
 use App\Vaksinasi;
+use DateTime;
+use DateInterval;
 use Auth;
 
 class TestController extends Controller
 {
-    public function index(){
-        
+	public function index(){
+		$getTanggalVaksinPertama = Vaksinasi::where('id_user', 6)->where('vaksinasi_ke', 1)->value('tanggal_vaksin');
+		
+		$date = new DateTime($getTanggalVaksinPertama);
+		$date->add(new DateInterval('P30D'));
+		echo $date->format('Y-m-d');	
 
-       $checkUser = Vaksinasi::where('id_user', 6)->where('vaksinasi_ke', 2)->first();
-       $checkId = Vaksinasi::where('id_vaksinasi', 13)->where('vaksinasi_ke', 2)->first();
+		$now = date("Y-m-d");
 
-       if(empty($checkId) ||empty($checkUser))
-            echo "kapok";
-        else
-        	echo $checkUser;
-    }
+		if($now > $date->format('Y-m-d')){
+			echo "sudah perlu";
+		} else {
+			echo "belum";
+		}
+	}
 }

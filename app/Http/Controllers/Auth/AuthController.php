@@ -54,7 +54,7 @@ class AuthController extends Controller
     	$user = User::findOrFail($request->user);
     	Auth::login($user);
 
-    	return redirect('/');
+    	return redirect('/home');
     }
 
     /**

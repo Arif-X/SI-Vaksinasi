@@ -18,6 +18,7 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index');
 Route::get('/test', 'TestController@index');
 
 Route::group([
@@ -26,7 +27,7 @@ Route::group([
 	Route::get('/login', function () { return view('auth.login'); })->name('login');
 	Route::post('/login', 'AuthController@login')->name('login.submit');
 	Route::get('/sign-in/{user}', 'AuthController@signIn')->name('sign-in');
-	Route::get('/logout', 'AuthController@logout')->name('logout');
+	Route::post('/logout', 'AuthController@logout')->name('logout');
 });
 
 Route::group([

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Pevaksin;
 use App\User;
+use App\Vaksinasi;
 use DataTables;
 
 class PevaksinController extends Controller
@@ -53,15 +54,21 @@ class PevaksinController extends Controller
 
         $check = Pevaksin::where('id_user', $getId)->first();
 
-        if(empty($check)){
-            Pevaksin::create([
-                'id_user' => $getId
-            ]);
+        $checkVaksinasiKedua = Vaksinasi::where('id_user', $getId)->where('vaksinasi_ke', 2)->first();
 
-            User::where('id', $getId)->update([
-                'role' => 2
-            ]);
-            return response()->json(['success'=>'Pevaksin Disimpan.']);
+        if(empty($check)){
+            if(!empty($checkVaksinasiKedua)){
+                Pevaksin::create([
+                    'id_user' => $getId
+                ]);
+
+                User::where('id', $getId)->update([
+                    'role' => 2
+                ]);
+                return response()->json(['success'=>'Pevaksin Disimpan.']);
+            } else {
+                return response()->json(['error'=>'Pevaksin Tidak Disimpan.']);
+            }
         } else {
             return response()->json(['error'=>'Pevaksin Sudah Ada.']);
         }

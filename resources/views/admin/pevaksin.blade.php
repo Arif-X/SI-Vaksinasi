@@ -78,8 +78,37 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="modal fade" id="AlertModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="AlertHeader"></h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h5>						
+						Pastikan
+						<ul>
+							<li>Pevaksin harus sudah melakukan vaksinasi kedua</li>
+						</ul>
+						<strong>Jika tidak mencapai kriteria diatas, maka data tidak akan tersimpan</strong>
+					</h5>
+				</div>
+			</div>
+		</div>
+	</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#AlertHeader').html("Alert");
+		$('#AlertModal').modal('show');
+	});
+</script>
 
 <script type="text/javascript">
 	$(function () {

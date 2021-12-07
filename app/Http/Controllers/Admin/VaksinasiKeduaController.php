@@ -12,6 +12,9 @@ use App\User;
 use App\Profil;
 use DataTables;
 use Str;
+use DateTime;
+use DateInterval;
+use Carbon\Carbon;
 
 
 class VaksinasiKeduaController extends Controller
@@ -41,6 +44,7 @@ class VaksinasiKeduaController extends Controller
                 'pevaksin_profil.nama as nama_pevaksin'
             )
             ->where('vaksinasi.vaksinasi_ke', 2)
+            ->orderBy('id_vaksinasi', 'DESC')
             ->get();
             return Datatables::of($data)
             ->addIndexColumn()
@@ -96,26 +100,50 @@ class VaksinasiKeduaController extends Controller
         // Get ID Tempat Vaksin
         $tempatVaksin = TempatVaksin::where('alamat', $getAlamat)->where('nama_tempat', $getTempat)->value('id_tempat_vaksin');
 
-        $checkId = Vaksinasi::where('id_vaksinasi', $request->id_vaksinasi)->where('vaksinasi_ke', 2)->first();
-        $checkUser = Vaksinasi::where('id_user', $getIdUser)->where('vaksinasi_ke', 2)->first();
+        $checkId = Vaksinasi::where('id_vaksinasi', $request->id_vaksinasi)->orWhere('id_user', $getIdUser)->where('vaksinasi_ke', 2)->first();
+        // $checkUser = Vaksinasi::where('id_user', $getIdUser)->where('vaksinasi_ke', 2)->first();
+
+        $getIdVaksin = Vaksinasi::where('id_user', $getIdUser)->where('vaksinasi_ke', 1)->value('id_jenis_vaksin');
+
+        $getTanggalVaksinPertama = Vaksinasi::where('id_user', $getIdUser)->where('vaksinasi_ke', 1)->value('tanggal_vaksin');
+
+        $dateStr = Carbon::parse($getTanggalVaksinPertama);
+        $inputDateStr = Carbon::parse($request->tanggal);
+        $now = $dateStr->addDays(30);
         
-        if(empty($checkId) || empty($checkUser)){
-            Vaksinasi::create([
-                'no_sertifikat' => Str::random(11),
-                'id_user' => $getIdUser,
-                'id_jenis_vaksin' => $request->jenis_vaksin,
-                'id_tempat_vaksin' => $tempatVaksin,
-                'id_pevaksin' => $getIdPevaksin,
-                'tanggal_vaksin' => $request->tanggal,
-                'vaksinasi_ke' => 2
-            ]);
+        if(empty($checkId)){
+            if($getIdVaksin == $request->jenis_vaksin){
+                if($inputDateStr > $now){
+                    Vaksinasi::create([
+                        'no_sertifikat' => Str::random(11),
+                        'id_user' => $getIdUser,
+                        'id_jenis_vaksin' => $request->jenis_vaksin,
+                        'id_tempat_vaksin' => $tempatVaksin,
+                        'id_pevaksin' => $getIdPevaksin,
+                        'tanggal_vaksin' => $request->tanggal,
+                        'vaksinasi_ke' => 2
+                    ]);
+                } else {
+                    return response()->json(['success'=>'Peserta Vaksinasi Belum Bisa Untuk Melakukan Vaksinasi Kedua.']);
+                } 
+            } else {
+                return response()->json(['success'=>'Jenis Vaksin Harus Sama Dengan Vaksinasi Pertama.']);
+            }
         } else {
-            Vaksinasi::where('id_vaksinasi', $request->id_vaksinasi)->where('vaksinasi_ke', 2)->update([
-                'id_jenis_vaksin' => $request->jenis_vaksin,
-                'id_tempat_vaksin' => $tempatVaksin,
-                'id_pevaksin' => $getIdPevaksin,
-                'tanggal_vaksin' => $request->tanggal,
-            ]);
+            if($getIdVaksin == $request->jenis_vaksin){
+                if($now > $date->format('Y-m-d')){
+                    Vaksinasi::where('id_vaksinasi', $request->id_vaksinasi)->where('vaksinasi_ke', 2)->update([
+                        'id_jenis_vaksin' => $request->jenis_vaksin,
+                        'id_tempat_vaksin' => $tempatVaksin,
+                        'id_pevaksin' => $getIdPevaksin,
+                        'tanggal_vaksin' => $request->tanggal,
+                    ]);
+                } else {
+                    return response()->json(['success'=>'Peserta Vaksinasi Belum Bisa Untuk Melakukan Vaksinasi Kedua.']);
+                } 
+            } else {
+                return response()->json(['success'=>'Jenis Vaksin Harus Sama Dengan Vaksinasi Pertama.']);
+            }
         }        
         return response()->json(['success'=>'Vaksinasi Disimpan.']);
     }
