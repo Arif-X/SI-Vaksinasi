@@ -47,8 +47,20 @@
 
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
-					<li class="menu-active"><a href="">Home</a></li>
-					<li><a href="#services">Fitur</a></li>
+					@if (Route::has('login'))
+					@auth
+					<li class="menu-active"><a href="/user/home">Home</a></li>
+					<li>
+						<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
+						</a>
+					</li>
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
+					@else
+					<a href="/login" class="btn btn-primary" style="padding: 15px"><strong>Join Now</strong></a>
+					@if (Route::has('register'))                    
+					@endif
+					@endauth
+					@endif
 				</ul>
 			</nav><!-- #nav-menu-container -->
 		</div>
@@ -91,7 +103,7 @@
 		</section><!-- End About Section -->
 
 		<!-- ======= Location Section ======= -->
-		<section id="lokasi" class="wow fadeInUp">
+		<section id="lokasi" class="wow fadeInUp shadow-lg">
 			<div class="container">
 				<style type="text/css">
 					#map {
@@ -114,9 +126,6 @@
 		<div class="container">
 			<div class="copyright">
 				&copy; Copyright <strong>Reveal</strong>. All Rights Reserved
-			</div>
-			<div class="credits">
-				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
 			</div>
 		</div>
 	</footer><!-- End Footer -->

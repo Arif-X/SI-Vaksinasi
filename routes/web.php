@@ -16,7 +16,7 @@ vider within a group which
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@home');
-Route::get('/test', 'TestController@index');
+// Route::get('/test', 'TestController@index');
 
 Route::group([
 	'namespace' => 'Auth'

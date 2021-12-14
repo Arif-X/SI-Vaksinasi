@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #50d8af;
+  color: #007bff;
   transition: 0.5s;
 }
 
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #50d8af;
+  background: #007bff;
   color: #fff;
   padding: 6px 12px 9px 12px;
   font-size: 16px;
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:focus {
-  background: #50d8af;
+  background: #007bff;
   color: #fff;
   outline: none;
 }
@@ -84,11 +84,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .contact-info a:hover {
-  color: #50d8af;
+  color: #007bff;
 }
 
 #topbar .contact-info i {
-  color: #50d8af;
+  color: #007bff;
   padding: 4px;
 }
 
@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #50d8af;
+  color: #007bff;
 }
 
 #topbar .social-links a:first-child {
@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header #logo h1 a span {
-  color: #50d8af;
+  color: #007bff;
 }
 
 #header #logo img {
@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-content h2 span {
-  color: #50d8af;
+  color: #007bff;
   text-decoration: underline;
 }
 
@@ -231,13 +231,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-content .btn-projects {
-  background: #50d8af;
-  border: 2px solid #50d8af;
+  background: #007bff;
+  border: 2px solid #007bff;
 }
 
 #intro .intro-content .btn-projects:hover {
   background: none;
-  color: #50d8af;
+  color: #007bff;
 }
 
 #intro #intro-carousel {
@@ -350,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu li:hover > a, .nav-menu .menu-active > a {
-  color: #50d8af;
+  color: #007bff;
 }
 
 .nav-menu > li {
@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu ul li:hover > a {
-  color: #50d8af;
+  color: #007bff;
 }
 
 .nav-menu ul ul {
@@ -465,11 +465,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
-  color: #50d8af;
+  color: #007bff;
 }
 
 #mobile-nav ul .menu-item-active {
-  color: #50d8af;
+  color: #007bff;
 }
 
 #mobile-body-overly {
@@ -525,7 +525,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #50d8af;
+  background: #007bff;
   bottom: 0;
   left: 0;
 }
@@ -629,7 +629,7 @@ section {
 #about .content i {
   font-size: 20px;
   padding-right: 4px;
-  color: #50d8af;
+  color: #007bff;
 }
 
 #about .content ul {

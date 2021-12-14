@@ -115,8 +115,9 @@ class VaksinasiKeduaController extends Controller
       if(empty($checkId)){
         if($getIdVaksin == $request->jenis_vaksin){
           if($inputDateStr > $now){
+            $random = Str::random(11);
             Vaksinasi::create([
-              'no_sertifikat' => Str::random(11),
+              'no_sertifikat' => Str::upper($random),
               'id_user' => $getIdUser,
               'id_jenis_vaksin' => $request->jenis_vaksin,
               'id_tempat_vaksin' => $tempatVaksin,
