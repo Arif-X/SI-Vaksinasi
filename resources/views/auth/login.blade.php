@@ -67,6 +67,10 @@
 							</button>
 						</div>
 					</div>
+
+					<div class="text-center mt-3">
+						<a href="/">< Kembali ke Halaman Utama</a>
+					</div>
 				</form>
 			</div>
 		</div>

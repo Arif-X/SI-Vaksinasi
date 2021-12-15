@@ -10,23 +10,23 @@
 	<meta content="" name="keywords">
 
 	<!-- Favicons -->
-	<link href="/home/img/favicon.png" rel="icon">
-	<link href="/home/img/apple-touch-icon.png" rel="apple-touch-icon">
+	<link href="/homes/img/favicon.png" rel="icon">
+	<link href="/homes/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
 
 	<!-- Vendor CSS Files -->
-	<link href="/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/home/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-	<link href="/home/vendor/animate.css/animate.min.css" rel="stylesheet">
-	<link href="/home/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/home/vendor/venobox/venobox.css" rel="stylesheet">
-	<link href="/home/vendor/owl.carousel/lib/home/assets/owl.carousel.min.css" rel="stylesheet">
-	<link href="/home/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="/homes/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/homes/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<link href="/homes/vendor/animate.css/animate.min.css" rel="stylesheet">
+	<link href="/homes/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/homes/vendor/venobox/venobox.css" rel="stylesheet">
+	<link href="/homes/vendor/owl.carousel/lib/home/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="/homes/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
 	<!-- Template Main CSS File -->
-	<link href="/home/css/style.css" rel="stylesheet">
+	<link href="/homes/css/style.css" rel="stylesheet">
 
 	<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
 	<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
@@ -56,7 +56,7 @@
 					</li>
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
 					@else
-					<a href="/login" class="btn btn-primary" style="padding: 15px"><strong>Join Now</strong></a>
+					<a href="/login" class="btn btn-primary" style="padding: 15px"><strong>Login</strong></a>
 					@if (Route::has('register'))                    
 					@endif
 					@endauth
@@ -69,7 +69,7 @@
 	<!-- ======= Intro Section ======= -->
 	<section id="intro" class="shadow">
 
-		<div class="intro-content" style="background-image: url('/home/img/bg.jpeg')">
+		<div class="intro-content" style="background-image: url('/homes/img/bg.jpeg')">
 			<h2>SI Vaksinasi</h2>
 			<div>
 
@@ -85,7 +85,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4 about-img">
-						<img src="/home/img/about-img.png" alt="">
+						<img src="/homes/img/about-img.png" alt="">
 					</div>
 
 					<div class="col-lg-8 content">
@@ -133,20 +133,20 @@
 	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 	<!-- Vendor JS Files -->
-	<script src="/home/vendor/jquery/jquery.min.js"></script>
-	<script src="/home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="/home/vendor/jquery.easing/jquery.easing.min.js"></script>
-	<script src="/home/vendor/php-email-form/validate.js"></script>
-	<script src="/home/vendor/wow/wow.min.js"></script>
-	<script src="/home/vendor/venobox/venobox.min.js"></script>
-	<script src="/home/vendor/owl.carousel/owl.carousel.min.js"></script>
-	<script src="/home/vendor/jquery-sticky/jquery.sticky.js"></script>
-	<script src="/home/vendor/superfish/superfish.min.js"></script>
-	<script src="/home/vendor/hoverIntent/hoverIntent.js"></script>
-	<script src="/home/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="/homes/vendor/jquery/jquery.min.js"></script>
+	<script src="/homes/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="/homes/vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="/homes/vendor/php-email-form/validate.js"></script>
+	<script src="/homes/vendor/wow/wow.min.js"></script>
+	<script src="/homes/vendor/venobox/venobox.min.js"></script>
+	<script src="/homes/vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script src="/homes/vendor/jquery-sticky/jquery.sticky.js"></script>
+	<script src="/homes/vendor/superfish/superfish.min.js"></script>
+	<script src="/homes/vendor/hoverIntent/hoverIntent.js"></script>
+	<script src="/homes/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
 	<!-- Template Main JS File -->
-	<script src="/home/js/main.js"></script>
+	<script src="/homes/js/main.js"></script>
 
 	<script>
 		L.mapbox.accessToken = 'pk.eyJ1IjoiYXJpcG9uIiwiYSI6ImNrbjV3cmZ5NTA4aDUyd25zenk3MmlwYzgifQ.YbJ_Ir794eD8VlrVvpX64g';

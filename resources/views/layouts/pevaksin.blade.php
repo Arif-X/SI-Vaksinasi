@@ -55,12 +55,12 @@
 
                     <a href="{{ route('pevaksin.vaksinasi-pertama.index') }}" class="nav__link">
                         <i class='bx bx-droplet nav__icon' ></i>
-                        <span class="nav__name">Data Vaksinasi Pertama</span>
+                        <span class="nav__name">Data Vaksinasi Ke-1</span>
                     </a>
 
                     <a href="{{ route('pevaksin.vaksinasi-kedua.index') }}" class="nav__link">
                         <i class='bx bx-droplet nav__icon' ></i>
-                        <span class="nav__name">Data Vaksinasi Kedua</span>
+                        <span class="nav__name">Data Vaksinasi Ke-2</span>
                     </a>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\User;
 
 class CreateUsersTable extends Migration
 {
@@ -19,6 +20,24 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('role');
             $table->foreign('role')->references('id_role')->on('role')->onDelete('cascade');
         });
+
+        $userData = array(
+            [
+                'email' => '18650045@student.uin-malang.ac.id',
+                'role' => '1',
+            ],
+            [
+                'email' => 'arif@student.uin-malang.ac.id',
+                'role' => '2',
+            ],
+        );
+
+        foreach ($userData as $data){
+            $user = new User();
+            $user->email =$data['email'];
+            $user->role =$data['role'];
+            $user->save();
+        }
     }
 
     /**
