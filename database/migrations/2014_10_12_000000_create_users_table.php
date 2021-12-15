@@ -26,10 +26,6 @@ class CreateUsersTable extends Migration
                 'email' => '18650045@student.uin-malang.ac.id',
                 'role' => '1',
             ],
-            [
-                'email' => 'arif@student.uin-malang.ac.id',
-                'role' => '2',
-            ],
         );
 
         foreach ($userData as $data){
